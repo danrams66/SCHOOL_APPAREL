@@ -1,23 +1,410 @@
-<!-- Paste the entire contents below into your index.html and replace the old one -->
-
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>School Apparel Solutions | School Spiritwear & Staff Apparel</title>
+  <meta name="description" content="School Apparel Solutions provides fast, reliable school spiritwear, staff apparel, and fundraising merch with simple ordering and clean, professional prints." />
+  <meta name="theme-color" content="#0b1f3a" />
 
-<title>School Apparel Solutions | School Spiritwear & Staff Apparel</title>
-<meta name="description" content="School Apparel Solutions provides fast, reliable school spiritwear, staff apparel, and fundraising merch with simple ordering and professional handling for schools and clubs." />
-<meta name="theme-color" content="#0b1f3a" />
+  <style>
+    :root{
+      --bg:#0b1f3a;
+      --bg2:#102a4b;
+      --card:#ffffff;
+      --text:#0b1220;
+      --muted:#5b677a;
+      --accent:#1f6feb;
+      --accent2:#10b981;
+      --line:#e6e9ef;
+      --shadow: 0 10px 30px rgba(0,0,0,.12);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:#f6f8fc;
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
+    .topbar{
+      position:sticky; top:0; z-index:10;
+      background:rgba(246,248,252,.9);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      display:grid; place-items:center; color:white; font-weight:800;
+      box-shadow: 0 10px 25px rgba(31,111,235,.25);
+      letter-spacing:.5px;
+    }
+    .brand h1{font-size:16px; margin:0; line-height:1.1;}
+    .brand p{margin:0; font-size:12px; color:var(--muted);}
+    .navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap;}
+    .navlinks a{font-size:13px; color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:12px;}
+    .navlinks a:hover{background:#eef3ff; color:#23324a;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid transparent;
+      text-decoration:none;
+      font-weight:650;
+      font-size:13px;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn.primary{background:var(--accent); color:white; box-shadow: 0 12px 25px rgba(31,111,235,.25);}
+    .btn.primary:hover{filter:brightness(.95);}
+    .btn.ghost{background:white; border-color:var(--line); color:#263046;}
+    .btn.ghost:hover{background:#fafcff;}
+    .hero{
+      background: radial-gradient(1200px 500px at 20% 0%, #1f6feb33, transparent 60%),
+                  radial-gradient(900px 500px at 80% 10%, #7c3aed26, transparent 55%),
+                  linear-gradient(180deg, var(--bg), var(--bg2));
+      color:white;
+      padding:54px 0 26px;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){ .heroGrid{grid-template-columns:1fr;}}
+    .pill{
+      display:inline-flex; gap:10px; align-items:center;
+      background: rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      color: rgba(255,255,255,.92);
+    }
+    .hero h2{margin:14px 0 10px; font-size:38px; line-height:1.12;}
+    @media (max-width: 520px){ .hero h2{font-size:30px;}}
+    .hero p{margin:0 0 18px; color: rgba(255,255,255,.88); font-size:15px; max-width:58ch;}
+    .heroCtas{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
+    .miniRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; color: rgba(255,255,255,.85); font-size:12px;}
+    .miniRow span{background: rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.14); padding:6px 10px; border-radius:999px;}
+    .card{
+      background: rgba(255,255,255,.95);
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      color: var(--text);
+      padding:18px;
+      overflow:hidden;
+    }
+    .card h3{margin:2px 0 10px; font-size:16px;}
+    .card p{margin:0; color:var(--muted); font-size:13px;}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px;}
+    @media (max-width: 520px){ .grid2{grid-template-columns:1fr;}}
+    .stat{
+      background:#f4f7ff;
+      border:1px solid #e6ecff;
+      border-radius: 16px;
+      padding:12px;
+    }
+    .stat b{display:block; font-size:14px; color:#1f2b44;}
+    .stat small{color:var(--muted);}
+    section{padding:34px 0;}
+    .sectionTitle{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-bottom:14px;
+    }
+    h4{margin:0; font-size:20px;}
+    .sub{margin:0; color:var(--muted); font-size:13px; max-width:80ch;}
+    .cards3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+    @media (max-width: 900px){ .cards3{grid-template-columns:1fr;}}
+    .feature{
+      background:white;
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      padding:16px;
+      box-shadow: 0 6px 18px rgba(12,18,32,.06);
+    }
+    .feature .icon{
+      width:38px; height:38px; border-radius:14px;
+      background:#eef3ff;
+      display:grid; place-items:center;
+      color:var(--accent);
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .feature h5{margin:0 0 6px; font-size:15px;}
+    .feature p{margin:0; color:var(--muted); font-size:13px;}
+    .how{
+      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
+    }
+    @media (max-width: 900px){ .how{grid-template-columns:1fr;}}
+    .step{
+      background:white; border:1px solid var(--line); border-radius: var(--radius); padding:16px;
+    }
+    .step b{display:flex; align-items:center; gap:10px;}
+    .badge{
+      width:26px; height:26px; border-radius:9px;
+      background: var(--accent2);
+      color:white; display:grid; place-items:center;
+      font-size:13px; font-weight:800;
+    }
+    .step p{margin:8px 0 0; color:var(--muted); font-size:13px;}
+    .contact{
+      display:grid; grid-template-columns: 1fr 1fr; gap:12px;
+    }
+    @media (max-width: 900px){ .contact{grid-template-columns:1fr;}}
+    .input{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:white;
+      font-size:14px;
+      outline:none;
+    }
+    textarea.input{min-height:120px; resize:vertical;}
+    .fineprint{font-size:12px; color:var(--muted); margin-top:10px;}
+    footer{
+      padding:26px 0;
+      border-top:1px solid var(--line);
+      background:white;
+    }
+    footer .footgrid{
+      display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center;
+    }
+    @media (max-width: 700px){ footer .footgrid{grid-template-columns:1fr;}}
+    .muted{color:var(--muted)}
 
-<style>
-/* … your existing CSS remains exactly the same as before … */
-</style>
+    /* form status */
+    .status{
+      margin-top:10px;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#fbfcff;
+      font-size:13px;
+      color:var(--muted);
+      display:none;
+    }
+    .status.ok{
+      display:block;
+      border-color:#c8f1df;
+      background:#ecfdf5;
+      color:#065f46;
+    }
+    .status.err{
+      display:block;
+      border-color:#ffd3d3;
+      background:#fff1f1;
+      color:#7f1d1d;
+    }
+  </style>
 </head>
 
 <body>
-<!-- Your existing header, hero, services, etc. remain the same -->
-<!-- … scroll down to the contact section … -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top">
+          <div class="logo">SAS</div>
+          <div>
+            <h1>School Apparel Solutions</h1>
+            <p>Spiritwear • Staff apparel • Fundraisers</p>
+          </div>
+        </a>
+        <div class="navlinks">
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#vendors">Vendor Info</a>
+          <a href="#contact">Contact</a>
+          <a class="btn primary" href="#contact">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header id="top" class="hero">
+    <div class="wrap">
+      <div class="heroGrid">
+        <div>
+          <div class="pill">✅ Fast turnaround • ✅ Clean prints • ✅ Easy ordering</div>
+          <h2>School spiritwear that’s simple, fast, and done right.</h2>
+          <p>
+            We help schools, teams, and PTOs launch apparel quickly — from staff shirts to spiritwear
+            and fundraising merch — with a smooth quote-to-delivery process.
+          </p>
+          <div class="heroCtas">
+            <a class="btn primary" href="#contact">Get a fast quote</a>
+            <a class="btn ghost" href="#services">See services</a>
+          </div>
+          <div class="miniRow">
+            <span>Bulk orders</span>
+            <span>Fundraisers</span>
+            <span>Staff + club apparel</span>
+            <span>Delivery options</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Quick vendor summary</h3>
+          <p>Perfect for school purchasing teams — clear, simple, and ready.</p>
+
+          <div class="grid2">
+            <div class="stat">
+              <b>Typical turnaround</b>
+              <small>5–10 business days (varies by order)</small>
+            </div>
+            <div class="stat">
+              <b>Print methods</b>
+              <small>Screen print, DTF, heat press (as needed)</small>
+            </div>
+            <div class="stat">
+              <b>Minimums</b>
+              <small>Flexible (bulk discounts available)</small>
+            </div>
+            <div class="stat">
+              <b>Vendor docs</b>
+              <small>W-9 available upon request</small>
+            </div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="#vendors">Vendor info</a>
+            <a class="btn ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h4>Services</h4>
+          <p class="sub">A simple menu of what schools typically need — with quick quotes and reliable delivery.</p>
+        </div>
+      </div>
+
+      <div class="cards3">
+        <div class="feature">
+          <div class="icon">👕</div>
+          <h5>Spiritwear & Staff Shirts</h5>
+          <p>T-shirts, hoodies, crewnecks, polos, and more — sized for students, staff, and families.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🏫</div>
+          <h5>Clubs, Teams & Events</h5>
+          <p>Field day, clubs, athletics, senior events, and school-wide initiatives — consistent prints, clean logos.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">💰</div>
+          <h5>Fundraisers</h5>
+          <p>Merch that supports PTO and program fundraising. We can help with pricing tiers and order planning.</p>
+        </div>
+      </div>
+
+      <div class="cards3" style="margin-top:12px;">
+        <div class="feature">
+          <div class="icon">🎨</div>
+          <h5>Artwork Help</h5>
+          <p>We can clean up logos, prep print-ready files, and match school branding for consistent results.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📦</div>
+          <h5>Packaging & Delivery</h5>
+          <p>Sorted by size/class upon request. Pickup or delivery options available (region dependent).</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h5>Quality & Proofing</h5>
+          <p>Digital proofs provided before production so schools can approve layouts and spelling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h4>How it works</h4>
+          <p class="sub">A clean process schools like — quote, proof, print, deliver. No drama.</p>
+        </div>
+      </div>
+
+      <div class="how">
+        <div class="step">
+          <b><span class="badge">1</span> Quote request</b>
+          <p>Send quantity, sizes, garment color, and your logo (or tell us what you want). We’ll respond fast.</p>
+        </div>
+        <div class="step">
+          <b><span class="badge">2</span> Proof approval</b>
+          <p>We provide a digital proof for approval — placement, sizing, and spelling confirmed.</p>
+        </div>
+        <div class="step">
+          <b><span class="badge">3</span> Production</b>
+          <p>We produce with the best method for the job (screen print, DTF, heat press) based on timeline and artwork.</p>
+        </div>
+        <div class="step">
+          <b><span class="badge">4</span> Delivery</b>
+          <p>Pickup or delivery. Optional sorting/packaging available for easy school distribution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vendors">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h4>Vendor info</h4>
+          <p class="sub">For school business offices and purchasing departments.</p>
+        </div>
+      </div>
+
+      <div class="cards3">
+        <div class="feature">
+          <div class="icon">📄</div>
+          <h5>W-9</h5>
+          <p>Available upon request. We can email it directly to your business office.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🧾</div>
+          <h5>Invoices & Quotes</h5>
+          <p>Clear written quotes, PO-friendly invoices, and simple documentation.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔒</div>
+          <h5>Professional handling</h5>
+          <p>Proof approval step + consistent production notes to ensure accuracy for school orders.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3>Want us set up as a vendor?</h3>
+        <p class="muted">Send the vendor packet request and we’ll respond with required documents (W-9, business certificate/DBA if needed, etc.).</p>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="#contact">Request vendor packet</a>
+          <a class="btn ghost" href="#contact">Email purchasing info</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="contact">
     <div class="wrap">
@@ -29,100 +416,135 @@
       </div>
 
       <div class="contact">
-
-        <!-- FORM -->
         <div class="card">
-          <h3>Request Quote / Vendor Packet</h3>
-          <p class="muted">This form sends directly — no email app required.</p>
+          <h3>Request a quote / vendor packet</h3>
+          <p class="muted">This form submits directly to us (works on any device — no email app required).</p>
 
+          <!-- Formspree form -->
           <form id="quoteForm" action="https://formspree.io/f/mvzqvozl" method="POST">
-
-            <input class="input" name="name" placeholder="Your name" required />
+            <input class="input" name="name" id="name" placeholder="Your name" required />
             <div style="height:10px"></div>
 
-            <input class="input" name="organization" placeholder="School / Organization" />
+            <input class="input" name="organization" id="org" placeholder="School / Organization" />
             <div style="height:10px"></div>
 
-            <input class="input" name="replyto" type="email" placeholder="Your email" required />
+            <input class="input" name="_replyto" id="email" type="email" placeholder="Your email" required />
             <div style="height:10px"></div>
 
-            <textarea class="input" name="message" placeholder="Tell us what you need: quantities, sizes, colors, print locations (front/back/sleeves), deadline, delivery/pickup, and attach artwork if requested." required></textarea>
+            <textarea class="input" name="message" id="msg" placeholder="Tell us what you need: items, quantities, sizes, colors, print locations (front/back/sleeves), deadline, delivery/pickup." required></textarea>
 
-            <!-- Optional subject line so your inbox is organized -->
-            <input type="hidden" name="_subject" value="Quote / Vendor Packet Request - School Apparel Solutions" />
+            <!-- optional subject label (Formspree will include it) -->
+            <input type="hidden" name="subject" value="Quote / Vendor Packet Request" />
 
             <div style="height:12px"></div>
-            <button class="btn primary" type="submit">Send request</button>
+            <button class="btn primary" type="submit" id="sendBtn">Send request</button>
 
-            <div id="successBox" class="successBox">✅ Thanks! Your request was sent. We’ll reply as soon as possible.</div>
-            <div id="errorBox" class="errorBox">⚠️ Something went wrong. Please try again or email us directly.</div>
+            <div class="status" id="formStatus"></div>
 
-            <p class="fineprint">Tip: If you have artwork/logo files, mention it in your message and we’ll tell you the best way to send them.</p>
-
+            <p class="fineprint">
+              Tip: We’ll reply by email. If you have artwork, you can attach it when you reply to our response.
+            </p>
           </form>
         </div>
 
-        <!-- DIRECT CONTACT INFO -->
         <div class="card">
           <h3>Direct contact</h3>
-          <p class="muted"><b>Email:</b> schoolapparelsolutions@gmail.com</p>
-          <p class="muted"><b>Phone:</b> (401) 231-5700</p>
-          <p class="muted"><b>Service Area:</b> MA / RI</p>
-        </div>
+          <p class="muted">Use the info below if you’d rather email or call.</p>
 
+          <div style="margin-top:12px; border:1px solid var(--line); border-radius:16px; padding:14px; background:#fbfcff;">
+            <p style="margin:0 0 6px;">
+              <b>Email:</b>
+              <a class="muted" href="mailto:schoolapparelsolutions@gmail.com">schoolapparelsolutions@gmail.com</a>
+            </p>
+            <p style="margin:0 0 6px;">
+              <b>Phone:</b>
+              <a class="muted" href="tel:+14012315700">(401) 231-5700</a>
+            </p>
+            <p style="margin:0;">
+              <b>Service Area:</b> <span class="muted">MA / RI</span>
+            </p>
+          </div>
+
+          <div style="margin-top:12px;">
+            <h3 style="margin:0 0 8px;">What schools should include</h3>
+            <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:13px;">
+              <li>Quantities by size (youth/adult breakdown)</li>
+              <li>Garment color and fabric preference</li>
+              <li>Print locations (front/back/sleeves)</li>
+              <li>Deadline + delivery/pickup instructions</li>
+              <li>PO / vendor onboarding requirements</li>
+            </ul>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn ghost" href="#top">Back to top</a>
+            <a class="btn primary" href="#contact">Get started</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-<!-- Your existing footer remains the same -->
-<footer>
-  <div class="wrap">
-    <div class="footgrid">
-      <div>
-        <b>School Apparel Solutions</b>
-        <div class="muted" style="font-size:12px; margin-top:2px;">
-          © <span id="year"></span>
+  <footer>
+    <div class="wrap">
+      <div class="footgrid">
+        <div>
+          <b>School Apparel Solutions</b>
+          <div class="muted" style="font-size:12px; margin-top:2px;">
+            © <span id="year"></span> • School spiritwear & staff apparel • PO-friendly quotes
+          </div>
+        </div>
+        <div class="muted" style="font-size:12px;">
+          <span>schoolapparelsolutions.com</span>
         </div>
       </div>
-      <div class="muted" style="font-size:12px;">
-        schoolapparelsolutions.com
-      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-// Just this small script to show current year and handle Formspree response
-document.getElementById("year").textContent = new Date().getFullYear();
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-const form = document.getElementById("quoteForm");
-const successBox = document.getElementById("successBox");
-const errorBox = document.getElementById("errorBox");
+    // Make Formspree submission stay on-page + show a success message
+    const form = document.getElementById("quoteForm");
+    const statusEl = document.getElementById("formStatus");
+    const btn = document.getElementById("sendBtn");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  successBox.style.display = "none";
-  errorBox.style.display = "none";
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      statusEl.className = "status";
+      statusEl.style.display = "none";
 
-  try {
-    const data = new FormData(form);
-    const res = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { "Accept": "application/json" }
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+
+      try {
+        const formData = new FormData(form);
+
+        const res = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          statusEl.textContent = "✅ Sent! We’ll get back to you ASAP.";
+          statusEl.className = "status ok";
+          statusEl.style.display = "block";
+          form.reset();
+        } else {
+          statusEl.textContent = "⚠️ Something went wrong. Please try again, or email us directly.";
+          statusEl.className = "status err";
+          statusEl.style.display = "block";
+        }
+      } catch (err) {
+        statusEl.textContent = "⚠️ Network error. Please try again, or email us directly.";
+        statusEl.className = "status err";
+        statusEl.style.display = "block";
+      } finally {
+        btn.disabled = false;
+        btn.textContent = "Send request";
+      }
     });
-
-    if (res.ok) {
-      form.reset();
-      successBox.style.display = "block";
-    } else {
-      errorBox.style.display = "block";
-    }
-  } catch (err) {
-    errorBox.style.display = "block";
-  }
-});
-</script>
-
+  </script>
 </body>
 </html>
