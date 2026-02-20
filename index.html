@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>School Apparel Solutions | School Spiritwear & Staff Apparel</title>
-  <meta name="description" content="School Apparel Solutions provides fast, reliable school spiritwear, staff apparel, and fundraising merch with simple ordering and clean, professional prints." />
+  <title>School Apparel Solutions | School Apparel, Blanks & Spiritwear</title>
+  <meta name="description" content="School Apparel Solutions provides blank apparel sourcing, school spiritwear, staff apparel, and fundraising merch with easy ordering and PO-friendly quotes." />
   <meta name="theme-color" content="#0b1f3a" />
 
   <style>
@@ -71,6 +71,7 @@
     .btn.primary:hover{filter:brightness(.95);}
     .btn.ghost{background:white; border-color:var(--line); color:#263046;}
     .btn.ghost:hover{background:#fafcff;}
+
     .hero{
       background: radial-gradient(1200px 500px at 20% 0%, #1f6feb33, transparent 60%),
                   radial-gradient(900px 500px at 80% 10%, #7c3aed26, transparent 55%),
@@ -96,10 +97,11 @@
     }
     .hero h2{margin:14px 0 10px; font-size:38px; line-height:1.12;}
     @media (max-width: 520px){ .hero h2{font-size:30px;}}
-    .hero p{margin:0 0 18px; color: rgba(255,255,255,.88); font-size:15px; max-width:58ch;}
+    .hero p{margin:0 0 18px; color: rgba(255,255,255,.88); font-size:15px; max-width:62ch;}
     .heroCtas{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
     .miniRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; color: rgba(255,255,255,.85); font-size:12px;}
     .miniRow span{background: rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.14); padding:6px 10px; border-radius:999px;}
+
     .card{
       background: rgba(255,255,255,.95);
       border: 1px solid rgba(255,255,255,.55);
@@ -211,6 +213,32 @@
       background:#fff1f1;
       color:#7f1d1d;
     }
+
+    /* optional sticky CTA bar */
+    .stickyCta{
+      position:fixed;
+      left:0; right:0; bottom:12px;
+      z-index:50;
+      display:none;
+    }
+    .stickyCta .inner{
+      max-width: var(--max);
+      margin:0 auto;
+      padding: 0 18px;
+    }
+    .stickyCta .bar{
+      background: rgba(255,255,255,.96);
+      border:1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+      border-radius: 18px;
+      padding: 10px 12px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .stickyCta small{color:var(--muted)}
   </style>
 </head>
 
@@ -222,10 +250,11 @@
           <div class="logo">SAS</div>
           <div>
             <h1>School Apparel Solutions</h1>
-            <p>Spiritwear • Staff apparel • Fundraisers</p>
+            <p>Blanks • Spiritwear • Staff apparel • Fundraisers</p>
           </div>
         </a>
         <div class="navlinks">
+          <a href="#catalog">Catalog</a>
           <a href="#services">Services</a>
           <a href="#process">Process</a>
           <a href="#why-us">Why Us</a>
@@ -241,21 +270,29 @@
     <div class="wrap">
       <div class="heroGrid">
         <div>
-          <div class="pill">✅ Fast turnaround • ✅ Clean prints • ✅ Easy ordering</div>
-          <h2>School spiritwear that’s simple, fast, and done right.</h2>
+          <div class="pill">✅ Wholesale sourcing • ✅ Clean prints • ✅ Easy ordering</div>
+          <h2>School apparel sourcing & printing — simple, fast, and done right.</h2>
           <p>
-            We help schools, teams, and PTOs launch apparel quickly — from staff shirts to spiritwear
-            and fundraising merch — with a smooth quote-to-delivery process.
+            Need blank tees and hoodies for your school? Or full spiritwear with logos?
+            Browse our supplier catalog, then request a quote and we’ll confirm availability, pricing, and delivery.
           </p>
           <div class="heroCtas">
             <a class="btn primary" href="#contact">Get a fast quote</a>
+
+            <!-- NEW: catalog CTA -->
+            <a class="btn ghost"
+               href="https://www.sportswearcollection.com/?site=SHRMUVLCJU"
+               target="_blank" rel="noopener">
+              Browse blank catalog (S&S) ↗
+            </a>
+
             <a class="btn ghost" href="#services">See services</a>
           </div>
           <div class="miniRow">
+            <span>Blank apparel</span>
             <span>Bulk orders</span>
             <span>Fundraisers</span>
             <span>Staff + club apparel</span>
-            <span>Delivery options</span>
           </div>
         </div>
 
@@ -269,8 +306,8 @@
               <small>5–10 business days (varies by order)</small>
             </div>
             <div class="stat">
-              <b>Print methods</b>
-              <small>Screen print, DTF, heat press (as needed)</small>
+              <b>What you can order</b>
+              <small>Blanks, spiritwear, staff apparel</small>
             </div>
             <div class="stat">
               <b>Minimums</b>
@@ -292,25 +329,74 @@
     </div>
   </header>
 
-  <section id="services">
+  <!-- NEW: CATALOG SECTION (brings them back with instructions) -->
+  <section id="catalog">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
-          <h4>Services</h4>
-          <p class="sub">A simple menu of what schools typically need — with quick quotes and reliable delivery.</p>
+          <h4>Browse our blank apparel catalog</h4>
+          <p class="sub">
+            Use our supplier catalog to find styles, colors, and sizes. When you’re ready, come back here to request a quote (we’ll confirm inventory and final pricing).
+          </p>
         </div>
       </div>
 
       <div class="cards3">
         <div class="feature">
-          <div class="icon">👕</div>
-          <h5>Spiritwear & Staff Shirts</h5>
-          <p>T-shirts, hoodies, crewnecks, polos, and more — sized for students, staff, and families.</p>
+          <div class="icon">🔎</div>
+          <h5>Search by style or brand</h5>
+          <p>Find tees, hoodies, polos, jackets, hats, and uniforms by keyword or style number.</p>
         </div>
         <div class="feature">
-          <div class="icon">🏫</div>
-          <h5>Clubs, Teams & Events</h5>
-          <p>Field day, clubs, athletics, senior events, and school-wide initiatives — consistent prints, clean logos.</p>
+          <div class="icon">📦</div>
+          <h5>Check colors & sizing</h5>
+          <p>See color swatches and size ranges (including youth and extended sizes).</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🧾</div>
+          <h5>Then request a quote</h5>
+          <p>Tell us the style #, color, sizes, and quantities — and we’ll send a PO-friendly quote.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+        <div>
+          <h3 style="margin:0 0 6px;">Open the catalog in a new tab</h3>
+          <p class="muted" style="margin:0;">
+            Tip: copy the <b>style #</b> and paste it into your quote message.
+          </p>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary"
+             href="https://www.sportswearcollection.com/?site=SHRMUVLCJU"
+             target="_blank" rel="noopener">
+            Browse catalog ↗
+          </a>
+          <a class="btn ghost" href="#contact">Request quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h4>Services</h4>
+          <p class="sub">A simple menu of what schools typically need — blanks, printing, and reliable delivery.</p>
+        </div>
+      </div>
+
+      <div class="cards3">
+        <div class="feature">
+          <div class="icon">📦</div>
+          <h5>Blank Apparel Supply</h5>
+          <p>Wholesale tees, hoodies, polos, jackets, hats, and more — great for schools and organizations.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">👕</div>
+          <h5>Spiritwear & Staff Shirts</h5>
+          <p>Decorated apparel with school logos — sized for students, staff, and families.</p>
         </div>
         <div class="feature">
           <div class="icon">💰</div>
@@ -344,97 +430,78 @@
       <div class="sectionTitle">
         <div>
           <h4>How it works</h4>
-          <p class="sub">A clean process schools like — quote, proof, print, deliver. No drama.</p>
+          <p class="sub">Browse → quote → proof → delivery. Easy for schools and purchasing departments.</p>
         </div>
       </div>
 
       <div class="how">
         <div class="step">
-          <b><span class="badge">1</span> Quote request</b>
-          <p>Send quantity, sizes, garment color, and your logo (or tell us what you want). We’ll respond fast.</p>
+          <b><span class="badge">1</span> Browse the catalog (optional)</b>
+          <p>Open the supplier catalog, choose a style, color, and sizes. Copy the <b>style #</b>.</p>
         </div>
         <div class="step">
-          <b><span class="badge">2</span> Proof approval</b>
-          <p>We provide a digital proof for approval — placement, sizing, and spelling confirmed.</p>
+          <b><span class="badge">2</span> Quote request</b>
+          <p>Send the style #, quantities, sizes, and deadline. Tell us if you want blanks or printing.</p>
         </div>
         <div class="step">
-          <b><span class="badge">3</span> Production</b>
-          <p>We produce with the best method for the job (screen print, DTF, heat press) based on timeline and artwork.</p>
+          <b><span class="badge">3</span> Proof approval (for decorated orders)</b>
+          <p>We provide a digital proof — placement, sizing, and spelling confirmed.</p>
         </div>
         <div class="step">
           <b><span class="badge">4</span> Delivery</b>
-          <p>Pickup or delivery. Optional sorting/packaging available for easy school distribution.</p>
+          <p>Pickup or delivery. Optional sorting/packaging available for easy distribution.</p>
         </div>
       </div>
     </div>
   </section>
+
   <!-- WHY SCHOOLS CHOOSE US -->
-<section id="why-us">
-  <div class="wrap">
-
-    <div class="sectionTitle">
-      <div>
-        <h4>Why Schools Choose Us</h4>
-        <p class="sub">
-          Trusted by schools, PTOs, and athletic programs for reliable service and clean results.
-        </p>
-      </div>
-    </div>
-
-    <div class="cards3">
-
-      <div class="feature">
-        <div class="icon">⭐</div>
-        <h5>Reliable & On-Time</h5>
-        <p>
-          We understand school deadlines. From spirit days to fundraisers, we deliver when you need it.
-        </p>
+  <section id="why-us">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h4>Why Schools Choose Us</h4>
+          <p class="sub">
+            Trusted by schools, PTOs, and athletic programs for reliable service and clean results.
+          </p>
+        </div>
       </div>
 
-      <div class="feature">
-        <div class="icon">🎨</div>
-        <h5>Clean, Professional Prints</h5>
-        <p>
-          Sharp logos, accurate colors, and consistent quality on every order.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">📋</div>
-        <h5>PO-Friendly & Vendor Ready</h5>
-        <p>
-          Clear quotes, W-9 documentation, and invoices that fit school purchasing systems.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">🤝</div>
-        <h5>Easy Communication</h5>
-        <p>
-          Fast responses, real people, and clear updates — no runaround.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">🔍</div>
-        <h5>Proof Before Production</h5>
-        <p>
-          Digital proofs are sent before printing so layouts and spelling are correct.
-        </p>
-      </div>
-
-      <div class="feature">
-        <div class="icon">📦</div>
-        <h5>Organized Delivery</h5>
-        <p>
-          Optional sorting by class, team, or size makes distribution easy.
-        </p>
+      <div class="cards3">
+        <div class="feature">
+          <div class="icon">⭐</div>
+          <h5>Reliable & On-Time</h5>
+          <p>We understand school deadlines. From spirit days to fundraisers, we deliver when you need it.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🎨</div>
+          <h5>Clean, Professional Prints</h5>
+          <p>Sharp logos, accurate colors, and consistent quality on every order.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📋</div>
+          <h5>PO-Friendly & Vendor Ready</h5>
+          <p>Clear quotes, W-9 documentation, and invoices that fit school purchasing systems.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <h5>Easy Communication</h5>
+          <p>Fast responses, real people, and clear updates — no runaround.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🔍</div>
+          <h5>Proof Before Production</h5>
+          <p>Digital proofs are sent before printing so layouts and spelling are correct.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">📦</div>
+          <h5>Organized Delivery</h5>
+          <p>Optional sorting by class, team, or size makes distribution easy.</p>
+        </div>
       </div>
 
     </div>
-
-  </div>
-</section>
+  </section>
 
   <section id="vendors">
     <div class="wrap">
@@ -447,30 +514,26 @@
 
       <div class="cards3">
         <div class="feature">
-  <div class="icon">📄</div>
-  <h5>W-9</h5>
-
-  <p>
-    Download our completed W-9 form for vendor setup.
-  </p>
-
-  <a
-  href="https://www.schoolapparelsolutions.com/School_Apparel_Solutions_W9_2026.pdf"
-  target="_blank"
-  rel="noopener"
-  class="btn ghost"
-  style="margin-top:10px; display:inline-flex;"
->
-  📥 Download W-9 (PDF)
-</a>
-
-</div>
+          <div class="icon">📄</div>
+          <h5>W-9</h5>
+          <p>Download our completed W-9 form for vendor setup.</p>
+          <a
+            href="https://www.schoolapparelsolutions.com/School_Apparel_Solutions_W9_2026.pdf"
+            target="_blank"
+            rel="noopener"
+            class="btn ghost"
+            style="margin-top:10px; display:inline-flex;"
+          >
+            📥 Download W-9 (PDF)
+          </a>
+        </div>
 
         <div class="feature">
           <div class="icon">🧾</div>
           <h5>Invoices & Quotes</h5>
           <p>Clear written quotes, PO-friendly invoices, and simple documentation.</p>
         </div>
+
         <div class="feature">
           <div class="icon">🔒</div>
           <h5>Professional handling</h5>
@@ -503,7 +566,6 @@
           <h3>Request a quote / vendor packet</h3>
           <p class="muted">This form submits directly to us (works on any device — no email app required).</p>
 
-          <!-- Formspree form -->
           <form id="quoteForm" action="https://formspree.io/f/mvzqvozl" method="POST">
             <input class="input" name="name" id="name" placeholder="Your name" required />
             <div style="height:10px"></div>
@@ -514,9 +576,8 @@
             <input class="input" name="_replyto" id="email" type="email" placeholder="Your email" required />
             <div style="height:10px"></div>
 
-            <textarea class="input" name="message" id="msg" placeholder="Tell us what you need: items, quantities, sizes, colors, print locations (front/back/sleeves), deadline, delivery/pickup." required></textarea>
+            <textarea class="input" name="message" id="msg" placeholder="Tell us what you need: style # (optional), items, quantities, sizes, colors, blanks vs printing, deadline, delivery/pickup." required></textarea>
 
-            <!-- optional subject label (Formspree will include it) -->
             <input type="hidden" name="subject" value="Quote / Vendor Packet Request" />
 
             <div style="height:12px"></div>
@@ -525,7 +586,7 @@
             <div class="status" id="formStatus"></div>
 
             <p class="fineprint">
-              Tip: We’ll reply by email. If you have artwork, you can attach it when you reply to our response.
+              Tip: If you browsed the catalog, paste the <b>style #</b> and the color/size breakdown. We’ll confirm inventory and send the quote.
             </p>
           </form>
         </div>
@@ -544,16 +605,17 @@
               <a class="muted" href="tel:+14012315700">(401) 231-5700</a>
             </p>
             <p style="margin:0;">
-              <b>Service Area:</b> <span class="muted">Based in MA/RI • Serving Schools Nationwide</span>
+              <b>Catalog:</b>
+              <a class="muted" href="https://www.sportswearcollection.com/?site=SHRMUVLCJU" target="_blank" rel="noopener">Browse supplier catalog ↗</a>
             </p>
           </div>
 
           <div style="margin-top:12px;">
             <h3 style="margin:0 0 8px;">What schools should include</h3>
             <ul style="margin:0; padding-left:18px; color:var(--muted); font-size:13px;">
+              <li>Style # (if known) + garment color</li>
               <li>Quantities by size (youth/adult breakdown)</li>
-              <li>Garment color and fabric preference</li>
-              <li>Print locations (front/back/sleeves)</li>
+              <li>Blanks only OR printing (front/back/sleeves)</li>
               <li>Deadline + delivery/pickup instructions</li>
               <li>PO / vendor onboarding requirements</li>
             </ul>
@@ -574,7 +636,7 @@
         <div>
           <b>School Apparel Solutions</b>
           <div class="muted" style="font-size:12px; margin-top:2px;">
-            © <span id="year"></span> • School spiritwear & staff apparel • PO-friendly quotes
+            © <span id="year"></span> • Blank apparel + spiritwear • PO-friendly quotes
           </div>
         </div>
         <div class="muted" style="font-size:12px;">
@@ -583,6 +645,22 @@
       </div>
     </div>
   </footer>
+
+  <!-- OPTIONAL sticky CTA bar (shows after scrolling a bit) -->
+  <div class="stickyCta" id="stickyCta">
+    <div class="inner">
+      <div class="bar">
+        <div>
+          <b>Need blanks or spiritwear?</b>
+          <small>Browse the catalog, then request a quote.</small>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn ghost" href="https://www.sportswearcollection.com/?site=SHRMUVLCJU" target="_blank" rel="noopener">Browse catalog ↗</a>
+          <a class="btn primary" href="#contact">Request a quote</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -628,6 +706,15 @@
         btn.textContent = "Send request";
       }
     });
+
+    // Optional sticky bar after scrolling
+    const sticky = document.getElementById("stickyCta");
+    const onScroll = () => {
+      if (window.scrollY > 700) sticky.style.display = "block";
+      else sticky.style.display = "none";
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
   </script>
 </body>
 </html>
