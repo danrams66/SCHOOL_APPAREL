@@ -272,7 +272,44 @@
       display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center;
     }
     @media (max-width: 700px){ footer .footgrid{grid-template-columns:1fr;}}
-    </style>
+    /* Hero showcase slider (right white card) */
+    .heroShowcase{padding:16px;}
+    .showTop{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:12px;
+    }
+    .showDots{display:flex; gap:6px; margin-top:4px;}
+    .dot{
+    width:8px; height:8px; border-radius:999px;
+    background:#d7deea;
+    }
+    .dot.isActive{background:var(--accent);}
+
+    .showSlide{display:none;}
+    .showSlide.isActive{display:grid; grid-template-columns: 1fr; gap:12px;}
+    .showImg{
+      width:100%;
+      height:180px;
+      border-radius:16px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#f2f4f8;
+    }
+    .showImg img{width:100%; height:100%; object-fit:cover; display:block;}
+
+    .showPrice{
+      display:inline-block;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid #e6ecff;
+      background:#f4f7ff;
+      color:#1f2b44;
+      font-size:14px;
+      }
+      </style>
 </head>
 
 <body>
@@ -296,6 +333,7 @@
           <a href="#process">Process</a>
           <a href="#why-us">Why Us</a>
           <a href="#vendors">Vendor Info</a>
+          <a href="#vendor-summary">Vendor Summary</a>
           <a href="#contact">Contact</a>
           <a class="btn primary" href="#contact">Request a Quote</a>
         </div>
@@ -327,67 +365,114 @@
           </div>
         </div>
 
-        <div class="card">
-          <h3>Quick vendor summary</h3>
-          <p>Perfect for school purchasing teams — clear, simple, and ready.</p>
+        <div class="card heroShowcase" aria-label="Featured specials">
+  <div class="showTop">
+    <div>
+      <h3 style="margin:0 0 6px;">Featured specials</h3>
+      <p class="muted" style="margin:0;">Examples + starting prices. Final quote depends on quantity and design.</p>
+    </div>
+    <div class="showDots" aria-hidden="true">
+      <span class="dot isActive"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
 
-          <div class="grid2">
-            <div class="stat">
-              <b>Typical turnaround</b>
-              <small>5–10 business days (varies by order)</small>
-            </div>
-            <div class="stat">
-              <b>What you can order</b>
-              <small>Blanks, spiritwear, staff apparel</small>
-            </div>
-            <div class="stat">
-              <b>Minimums</b>
-              <small>Flexible (bulk discounts available)</small>
-            </div>
-            <div class="stat">
-              <b>Vendor docs</b>
-              <small>W-9 available upon request</small>
-            </div>
-          </div>
-
-          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" href="#vendors">Vendor info</a>
-            <a class="btn ghost" href="#contact">Contact</a>
-          </div>
-        </div>
-
+  <div class="showSlide isActive">
+    <div class="showImg">
+      <!-- Replace with your own image file -->
+      <img src="special-tees.jpg" alt="Spirit tees example">
+    </div>
+    <div class="showCopy">
+      <h4 style="margin:0 0 6px; font-size:16px;">Basic Spirit Tees</h4>
+      <p style="margin:0 0 10px;" class="muted">24+ shirts • 1-color front print</p>
+      <div class="showPrice">Starting at <b>$11–$13</b> each</div>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn primary small" href="#contact">Request a quote</a>
+        <a class="btn ghost small" href="#pricing-preview">See pricing</a>
       </div>
     </div>
+  </div>
+
+  <div class="showSlide">
+    <div class="showImg">
+      <img src="special-hoodies.jpg" alt="Hoodies example">
+    </div>
+    <div class="showCopy">
+      <h4 style="margin:0 0 6px; font-size:16px;">Custom Hoodies</h4>
+      <p style="margin:0 0 10px;" class="muted">Bulk discounts available</p>
+      <div class="showPrice">Starting at <b>$24–$30</b> each</div>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn primary small" href="#contact">Request a quote</a>
+        <a class="btn ghost small" href="#services">Services</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="showSlide">
+    <div class="showImg">
+      <img src="special-hats.jpg" alt="Hats example">
+    </div>
+    <div class="showCopy">
+      <h4 style="margin:0 0 6px; font-size:16px;">Hats + Staff Gear</h4>
+      <p style="margin:0 0 10px;" class="muted">Perfect for clubs, teams, and staff</p>
+      <div class="showPrice">Ask about <b>bundle pricing</b></div>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="btn primary small" href="#contact">Request a quote</a>
+        <a class="btn ghost small" href="#catalog">Browse catalog</a>
+      </div>
+    </div>
+  </div>
+</div>
   </header>
-<section id="pricing-preview">
+ <section id="vendor-summary">
   <div class="wrap">
     <div class="sectionTitle">
       <div>
-        <h4>Popular Apparel Options</h4>
-        <p class="sub">Typical starting prices for bulk school orders. Final quote depends on quantity, brand, and design.</p>
+        <h4>Vendor summary</h4>
+        <p class="sub">PO-friendly ordering with clear documentation and proof approval.</p>
       </div>
+      <a class="btn primary" href="#vendors">Vendor Info</a>
     </div>
 
     <div class="cards3">
-
       <div class="feature">
-        <div class="icon">👕</div>
-        <h5>Basic Spirit Tees</h5>
-        <p><b>Starting at $11–$13 each</b><br>24+ shirts • 1-color front print</p>
+        <div class="icon">⏱️</div>
+        <h5>Typical turnaround</h5>
+        <p>5–10 business days (varies by order)</p>
       </div>
 
       <div class="feature">
-        <div class="icon">🏫</div>
-        <h5>Staff / Club Shirts</h5>
-        <p><b>Starting at $14–$18 each</b><br>Depends on logo size & quantity</p>
+        <div class="icon">🧾</div>
+        <h5>PO-friendly</h5>
+        <p>Quotes + invoices that fit school purchasing systems</p>
       </div>
 
       <div class="feature">
-        <div class="icon">🧥</div>
-        <h5>Custom Hoodies</h5>
-        <p><b>Starting at $24–$30 each</b><br>Bulk discounts available</p>
+        <div class="icon">✅</div>
+        <h5>Proof before print</h5>
+        <p>Digital proof approval for decorated orders</p>
+      </div>
+    </div>
+
+    <div class="cards3" style="margin-top:12px;">
+      <div class="feature">
+        <div class="icon">📦</div>
+        <h5>What you can order</h5>
+        <p>Blanks, spiritwear, staff apparel, fundraising merch</p>
       </div>
 
+      <div class="feature">
+        <div class="icon">📄</div>
+        <h5>Vendor docs</h5>
+        <p>W-9 available on request (and downloadable)</p>
+      </div>
+
+      <div class="feature">
+        <div class="icon">🚚</div>
+        <h5>Delivery options</h5>
+        <p>Pickup, delivery, or shipping (location dependent)</p>
+      </div>
     </div>
   </div>
 </section>
@@ -803,6 +888,24 @@
         btn.textContent = "Send request";
       }
     });
+    // Hero showcase slider rotation
+(function(){
+  const slides = Array.from(document.querySelectorAll(".heroShowcase .showSlide"));
+  const dots = Array.from(document.querySelectorAll(".heroShowcase .dot"));
+  if (!slides.length) return;
+
+  let idx = 0;
+  const show = (i) => {
+    slides.forEach((s, n) => s.classList.toggle("isActive", n === i));
+    dots.forEach((d, n) => d.classList.toggle("isActive", n === i));
+  };
+
+  show(idx);
+  setInterval(() => {
+    idx = (idx + 1) % slides.length;
+    show(idx);
+  }, 3500); // change every 3.5 seconds
+})();
   </script>
 </body>
 </html>
