@@ -21,7 +21,6 @@
       --radius: 18px;
       --max: 1100px;
     }
-
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -33,8 +32,6 @@
     }
     a{color:inherit}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 18px;}
-
-    /* Top bar */
     .topbar{
       position:sticky; top:0; z-index:10;
       background:rgba(246,248,252,.9);
@@ -47,28 +44,46 @@
       gap:12px;
     }
     .brand{display:flex; align-items:center; gap:10px; text-decoration:none;}
-    .logoImg{
-      width:56px;height:56px;border-radius:16px;background:white;
-      border:1px solid var(--line);
-      display:grid;place-items:center;overflow:hidden;flex:0 0 auto;
-    }
-    .logoImg img{width:100%;height:100%;object-fit:cover;display:block;}
-    .logoFallback{
-      width:56px;height:56px;border-radius:16px;
-      background: linear-gradient(135deg, var(--accent), #7c3aed);
-      display:grid;place-items:center;color:white;font-weight:800;
-      box-shadow: 0 10px 25px rgba(31,111,235,.25);
-      letter-spacing:.5px;flex:0 0 auto;
-    }
-    .brand h1{font-size:16px;margin:0;line-height:1.1;}
-    .brand p{margin:0;font-size:12px;color:var(--muted);}
 
-    .navlinks{display:flex; gap:8px; align-items:center; flex-wrap:wrap;}
+    .logoImg{
+      width:56px;
+      height:56px;
+      border-radius:16px;
+      background:white;
+      border:1px solid var(--line);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+    }
+    .logoImg img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .logoFallback{
+      width:56px;
+      height:56px;
+      border-radius:16px;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      display:grid;
+      place-items:center;
+      color:white;
+      font-weight:800;
+      box-shadow: 0 10px 25px rgba(31,111,235,.25);
+      letter-spacing:.5px;
+      flex:0 0 auto;
+    }
+
+    .brand h1{font-size:16px; margin:0; line-height:1.1;}
+    .brand p{margin:0; font-size:12px; color:var(--muted);}
+
+    .navlinks{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
     .navlinks a{
       font-size:13px; color:var(--muted);
       text-decoration:none; padding:8px 10px; border-radius:12px;
     }
-    .navlinks a:hover{background:#eef3ff;color:#23324a;}
+    .navlinks a:hover{background:#eef3ff; color:#23324a;}
 
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
@@ -88,21 +103,21 @@
     .btn.ghost:hover{background:#fafcff;}
     .btn.small{padding:8px 12px; border-radius:12px; font-size:12px;}
 
-    /* Hero */
     .hero{
       background: radial-gradient(1200px 500px at 20% 0%, #1f6feb33, transparent 60%),
                   radial-gradient(900px 500px at 80% 10%, #7c3aed26, transparent 55%),
                   linear-gradient(180deg, var(--bg), var(--bg2));
       color:white;
-      padding:44px 0 20px; /* slightly shorter than before */
+      padding:54px 0 26px;
     }
+
     .heroGrid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:20px;
+      grid-template-columns: 1.15fr .85fr;
+      gap:22px;
       align-items:start;
     }
-    @media (max-width: 900px){ .heroGrid{grid-template-columns:1fr;} }
+    @media (max-width: 900px){ .heroGrid{grid-template-columns:1fr;}}
 
     .pill{
       display:inline-flex; gap:10px; align-items:center;
@@ -114,16 +129,22 @@
       color: rgba(255,255,255,.92);
       flex-wrap:wrap;
     }
-    .hero h2{margin:14px 0 10px; font-size:36px; line-height:1.12;}
-    @media (max-width: 520px){ .hero h2{font-size:28px;} }
-    .hero p{margin:0 0 16px; color: rgba(255,255,255,.88); font-size:15px; max-width:60ch;}
 
-    .heroCtas{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
-    .miniRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; color: rgba(255,255,255,.85); font-size:12px;}
+    .hero h2{margin:14px 0 10px; font-size:38px; line-height:1.12;}
+    @media (max-width: 520px){ .hero h2{font-size:30px;}}
+
+    /* ✅ FIX: only the LEFT hero copy paragraphs should be white */
+    .heroText p{
+      margin:0 0 18px;
+      color: rgba(255,255,255,.88);
+      font-size:15px;
+      max-width:60ch;
+    }
+
+    .heroCtas{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
+    .miniRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; color: rgba(255,255,255,.85); font-size:12px;}
     .miniRow span{background: rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.14); padding:6px 10px; border-radius:999px;}
 
-    /* Cards + sections */
-    section{padding:28px 0;} /* shorter than before */
     .card{
       background: rgba(255,255,255,.95);
       border: 1px solid rgba(255,255,255,.55);
@@ -133,16 +154,31 @@
       padding:18px;
       overflow:hidden;
     }
+    .card h3{margin:2px 0 10px; font-size:16px;}
+    .card p{margin:0; color:var(--muted); font-size:13px;}
+
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:12px;}
+    @media (max-width: 520px){ .grid2{grid-template-columns:1fr;}}
+
+    .stat{
+      background:#f4f7ff;
+      border:1px solid #e6ecff;
+      border-radius: 16px;
+      padding:12px;
+    }
+    .stat b{display:block; font-size:14px; color:#1f2b44;}
+    .stat small{color:var(--muted);}
+
+    section{padding:34px 0;}
     .sectionTitle{
       display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
-      margin-bottom:12px;
+      margin-bottom:14px;
     }
     h4{margin:0; font-size:20px;}
     .sub{margin:0; color:var(--muted); font-size:13px; max-width:85ch;}
-    .muted{color:var(--muted)}
 
     .cards3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
-    @media (max-width: 900px){ .cards3{grid-template-columns:1fr;} }
+    @media (max-width: 900px){ .cards3{grid-template-columns:1fr;}}
 
     .feature{
       background:white;
@@ -165,7 +201,7 @@
     .how{
       display:grid; grid-template-columns: 1fr 1fr; gap:12px;
     }
-    @media (max-width: 900px){ .how{grid-template-columns:1fr;} }
+    @media (max-width: 900px){ .how{grid-template-columns:1fr;}}
 
     .step{
       background:white; border:1px solid var(--line); border-radius: var(--radius); padding:16px;
@@ -179,11 +215,10 @@
     }
     .step p{margin:8px 0 0; color:var(--muted); font-size:13px;}
 
-    /* Contact */
     .contact{
       display:grid; grid-template-columns: 1fr 1fr; gap:12px;
     }
-    @media (max-width: 900px){ .contact{grid-template-columns:1fr;} }
+    @media (max-width: 900px){ .contact{grid-template-columns:1fr;}}
 
     .input{
       width:100%;
@@ -196,6 +231,7 @@
     }
     textarea.input{min-height:120px; resize:vertical;}
     .fineprint{font-size:12px; color:var(--muted); margin-top:10px;}
+    .muted{color:var(--muted)}
 
     /* form status */
     .status{
@@ -221,22 +257,56 @@
       color:#7f1d1d;
     }
 
-    /* Footer */
+    /* sticky bottom helper */
+    .stickyCta{
+      position:sticky;
+      bottom:12px;
+      z-index:9;
+      margin-top:-10px;
+    }
+    .stickyCard{
+      background: rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(12,18,32,.14);
+      padding:12px 14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      backdrop-filter: blur(10px);
+    }
+    @media (max-width: 700px){
+      .stickyCard{flex-direction:column; align-items:flex-start;}
+    }
+
     footer{
-      padding:22px 0;
+      padding:26px 0;
       border-top:1px solid var(--line);
       background:white;
     }
     footer .footgrid{
       display:grid; grid-template-columns:1fr auto; gap:12px; align-items:center;
     }
-    @media (max-width: 700px){ footer .footgrid{grid-template-columns:1fr;} }
+    @media (max-width: 700px){ footer .footgrid{grid-template-columns:1fr;}}
 
     /* Hero showcase slider (right white card) */
     .heroShowcase{
       padding:16px;
       align-self:start;
+      color: var(--text); /* ✅ insurance */
     }
+    /* ✅ insurance: force text in the showcase to be dark (keeps buttons intact) */
+    .heroShowcase h3,
+    .heroShowcase h4,
+    .heroShowcase h5{
+      color: var(--text);
+    }
+    .heroShowcase p,
+    .heroShowcase .muted{
+      color: var(--muted);
+    }
+
     .showTop{
       display:flex;
       align-items:flex-start;
@@ -254,17 +324,13 @@
     .showSlide{display:none;}
     .showSlide.isActive{display:grid; grid-template-columns: 1fr; gap:12px;}
 
-    /* Key part: keep the card compact so it's fully visible */
     .showImg{
       width:100%;
-      height: 220px; /* fixed = predictable and keeps full card visible */
+      height: clamp(180px, 22vw, 240px);
       border-radius:16px;
       overflow:hidden;
       border:1px solid var(--line);
       background:#f2f4f8;
-    }
-    @media (max-width: 900px){
-      .showImg{height: 240px;}
     }
     .showImg img{
       width:100%;
@@ -281,44 +347,6 @@
       color:#1f2b44;
       font-size:14px;
     }
-
-    /* FAQ accordion */
-    details.faqItem{
-      background:white;
-      border:1px solid var(--line);
-      border-radius: var(--radius);
-      padding:14px 16px;
-      box-shadow: 0 6px 18px rgba(12,18,32,.06);
-    }
-    details.faqItem summary{
-      cursor:pointer;
-      font-weight:700;
-      list-style:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-    }
-    details.faqItem summary::-webkit-details-marker{display:none;}
-    .faqGrid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width: 900px){ .faqGrid{grid-template-columns:1fr;} }
-
-    .chev{
-      width:30px;height:30px;border-radius:12px;
-      background:#eef3ff;display:grid;place-items:center;
-      color:var(--accent);flex:0 0 auto;
-      font-weight:900;
-    }
-    details[open] .chev{transform: rotate(180deg);}
-    details.faqItem p{
-      margin:10px 0 0;
-      color:var(--muted);
-      font-size:13px;
-    }
   </style>
 </head>
 
@@ -328,8 +356,7 @@
       <div class="nav">
         <a class="brand" href="#top" aria-label="School Apparel Solutions home">
           <div class="logoImg" aria-hidden="true">
-            <img src="logo.png" alt=""
-              onerror="this.closest('.logoImg').replaceWith(Object.assign(document.createElement('div'),{className:'logoFallback',textContent:'SAS'}));">
+            <img src="logo.png" alt="" onerror="this.closest('.logoImg').replaceWith(Object.assign(document.createElement('div'),{className:'logoFallback',textContent:'SAS'}));">
           </div>
           <div>
             <h1>School Apparel Solutions</h1>
@@ -340,7 +367,10 @@
         <div class="navlinks">
           <a href="#catalog">Catalog</a>
           <a href="#services">Services</a>
-          <a href="#vendor">Vendor Info</a>
+          <a href="#process">Process</a>
+          <a href="#why-us">Why Us</a>
+          <a href="#vendors">Vendor Info</a>
+          <a href="#vendor-summary">Vendor Summary</a>
           <a href="#contact">Contact</a>
           <a class="btn primary" href="#contact">Request a Quote</a>
         </div>
@@ -351,7 +381,9 @@
   <header id="top" class="hero">
     <div class="wrap">
       <div class="heroGrid">
-        <div>
+
+        <!-- ✅ FIX: wrap the left hero copy so only it gets white paragraph styling -->
+        <div class="heroText">
           <div class="pill">✅ Wholesale Sourcing • ✅ Clean Prints • ✅ Easy Ordering</div>
           <h2>School apparel sourcing &amp; printing — simple, fast, and done right.</h2>
           <p>
@@ -361,7 +393,7 @@
           </p>
           <div class="heroCtas">
             <a class="btn primary" href="#contact">Request a Quote</a>
-            <a class="btn ghost" href="#catalog">Browse Styles &amp; Colors</a>
+            <a class="btn ghost" href="#catalog">Browse Styles & Colors</a>
             <a class="btn ghost" href="#services">View Services</a>
           </div>
           <div class="miniRow">
@@ -372,7 +404,7 @@
           </div>
         </div>
 
-        <div class="card heroShowcase" aria-label="Featured products">
+        <div class="card heroShowcase" aria-label="Featured specials">
           <div class="showTop">
             <div>
               <h3 style="margin:0 0 6px;">FEATURED PRODUCTS</h3>
@@ -387,11 +419,11 @@
 
           <div class="showSlide isActive">
             <div class="showImg">
-              <img src="special-tees.jpg" alt="Blank t-shirts example">
+              <img src="special-tees.jpg" alt="Spirit tees example">
             </div>
             <div class="showCopy">
-              <h4 style="margin:0 0 6px; font-size:16px;">Gildan Unisex Heavy Cotton™ T-Shirt — 5000</h4>
-              <p style="margin:0 0 10px;" class="muted">81 colors available</p>
+              <h4 style="margin:0 0 6px; font-size:16px;">Gildan Unisex Heavy Cotton™ T-Shirt - 5000</h4>
+              <p style="margin:0 0 10px;" class="muted">81 Colors to choose from</p>
               <div class="showPrice">Starting at <b>$3.56</b> each</div>
               <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
                 <a class="btn primary small" href="#contact">Request a quote</a>
@@ -402,11 +434,11 @@
 
           <div class="showSlide">
             <div class="showImg">
-              <img src="special-hoodies.jpg" alt="Blank hoodies example">
+              <img src="special-hoodies.jpg" alt="Hoodies example">
             </div>
             <div class="showCopy">
-              <h4 style="margin:0 0 6px; font-size:16px;">Gildan Softstyle® Midweight Hoodie — SF500</h4>
-              <p style="margin:0 0 10px;" class="muted">38 colors available</p>
+              <h4 style="margin:0 0 6px; font-size:16px;">Gildan Unisex Softstyle® Midweight Hooded Sweatshirt - SF500</h4>
+              <p style="margin:0 0 10px;" class="muted">38 Colors to choose from</p>
               <div class="showPrice">Starting at <b>$15.65</b> each</div>
               <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
                 <a class="btn primary small" href="#contact">Request a quote</a>
@@ -417,40 +449,113 @@
 
           <div class="showSlide">
             <div class="showImg">
-              <img src="special-hats.jpg" alt="Hats and accessories example">
+              <img src="special-hats.jpg" alt="Hats example">
             </div>
             <div class="showCopy">
-              <h4 style="margin:0 0 6px; font-size:16px;">Hats, Bags &amp; Accessories</h4>
-              <p style="margin:0 0 10px;" class="muted">Hundreds of styles in our supplier catalog</p>
+              <h4 style="margin:0 0 6px; font-size:16px;">Hats, Bags & Staff Accessories</h4>
+              <p style="margin:0 0 10px;" class="muted">Hundreds of styles available in our supplier catalog</p>
               <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
                 <a class="btn primary small" href="#contact">Request a quote</a>
                 <a class="btn ghost small" href="#catalog">Browse catalog</a>
               </div>
             </div>
           </div>
-
         </div>
+
       </div>
     </div>
   </header>
+
+  <section id="vendor-summary">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h4>Vendor summary</h4>
+          <p class="sub">PO-friendly ordering with clear documentation and proof approval.</p>
+        </div>
+        <a class="btn primary" href="#vendors">Vendor Info</a>
+      </div>
+
+      <div class="cards3">
+        <div class="feature">
+          <div class="icon">⏱️</div>
+          <h5>Typical turnaround</h5>
+          <p>5–10 business days (varies by order)</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🧾</div>
+          <h5>PO-friendly</h5>
+          <p>Quotes + invoices that fit school purchasing systems</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h5>Proof before print</h5>
+          <p>Digital proof approval for decorated orders</p>
+        </div>
+      </div>
+
+      <div class="cards3" style="margin-top:12px;">
+        <div class="feature">
+          <div class="icon">📦</div>
+          <h5>What you can order</h5>
+          <p>Blanks, spiritwear, staff apparel, fundraising merch</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">📄</div>
+          <h5>Vendor docs</h5>
+          <p>W-9 available on request (and downloadable)</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🚚</div>
+          <h5>Delivery options</h5>
+          <p>Pickup, delivery, or shipping (location dependent)</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CATALOG -->
   <section id="catalog">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
-          <h4>Catalog</h4>
-          <p class="sub">Browse styles, colors, sizes. Copy the <b>style #</b> and include it in your quote request.</p>
+          <h4>Browse our blank apparel catalog</h4>
+          <p class="sub">
+            Use our supplier catalog to find styles, colors, and sizes. When you’re ready, come back here to request a quote
+            (we’ll confirm inventory and final pricing).
+          </p>
         </div>
       </div>
 
-      <div class="card" style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+      <div class="cards3">
+        <div class="feature">
+          <div class="icon">🔎</div>
+          <h5>Search by style or brand</h5>
+          <p>Find tees, hoodies, polos, jackets, hats, and uniforms by keyword or style number.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🎨</div>
+          <h5>Check colors &amp; sizing</h5>
+          <p>See color swatches and size ranges (including youth and extended sizes).</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✅</div>
+          <h5>Then request a quote</h5>
+          <p>Tell us the style #, color, sizes, and quantities — and we’ll send a PO-friendly quote.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
         <div>
-          <h3 style="margin:0 0 6px;">Open the supplier catalog</h3>
-          <p class="muted" style="margin:0;">We confirm inventory and final pricing when you request a quote.</p>
+          <h3 style="margin:0 0 6px;">Open the catalog in a new tab</h3>
+          <p class="muted" style="margin:0;">Tip: copy the <b>style #</b> and paste it into your quote message.</p>
         </div>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary"
+          <a class="btn primary" id="catalogBtn"
              href="https://www.sportswearcollection.com/?site=SHRMUVLCJU"
              target="_blank" rel="noopener">
             Browse supplier catalog ↗
@@ -465,13 +570,12 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
           <h4>Services</h4>
-          <p class="sub">What schools typically need — blanks, printing, fundraisers, and reliable delivery.</p>
+          <p class="sub">A simple menu of what schools typically need — blanks, printing, and reliable delivery.</p>
         </div>
       </div>
 
@@ -479,17 +583,17 @@
         <div class="feature">
           <div class="icon">📦</div>
           <h5>Blank Apparel Supply</h5>
-          <p>Wholesale tees, hoodies, polos, jackets, hats, and more.</p>
+          <p>Wholesale tees, hoodies, polos, jackets, hats, and more — great for schools and organizations.</p>
         </div>
         <div class="feature">
           <div class="icon">👕</div>
-          <h5>Spiritwear &amp; Staff Shirts</h5>
-          <p>Decorated apparel with school logos for students, staff, and families.</p>
+          <h5>Spiritwear & Staff Shirts</h5>
+          <p>Decorated apparel with school logos — sized for students, staff, and families.</p>
         </div>
         <div class="feature">
           <div class="icon">💰</div>
           <h5>Fundraisers</h5>
-          <p>Merch that supports PTO and program fundraising with simple ordering.</p>
+          <p>Merch that supports PTO and program fundraising. We can help with pricing tiers and order planning.</p>
         </div>
       </div>
 
@@ -497,23 +601,22 @@
         <div class="feature">
           <div class="icon">🎨</div>
           <h5>Artwork Help</h5>
-          <p>Logo cleanup, print-ready files, and consistent branding.</p>
-        </div>
-        <div class="feature">
-          <div class="icon">🔍</div>
-          <h5>Proof Before Print</h5>
-          <p>Digital proof approval for decorated orders (placement + spelling confirmed).</p>
+          <p>We can clean up logos, prep print-ready files, and match school branding for consistent results.</p>
         </div>
         <div class="feature">
           <div class="icon">🚚</div>
-          <h5>Delivery Options</h5>
-          <p>Pickup, delivery, or shipping (location dependent). Optional sorting by size/class.</p>
+          <h5>Packaging & Delivery</h5>
+          <p>Sorted by size/class upon request. Pickup or delivery options available (region dependent).</p>
+        </div>
+        <div class="feature">
+          <div class="icon">🧾</div>
+          <h5>Quality & Proofing</h5>
+          <p>Digital proofs provided before production so schools can approve layouts and spelling.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
   <section id="process">
     <div class="wrap">
       <div class="sectionTitle">
@@ -526,120 +629,154 @@
       <div class="how">
         <div class="step">
           <b><span class="badge">1</span> Browse the catalog (optional)</b>
-          <p>Pick a style, color, and sizes. Copy the <b>style #</b>.</p>
+          <p>Open the supplier catalog, choose a style, color, and sizes. Copy the <b>style #</b>.</p>
         </div>
         <div class="step">
-          <b><span class="badge">2</span> Request a quote</b>
-          <p>Send style #, quantities by size, deadline, and blanks vs printing.</p>
+          <b><span class="badge">2</span> Quote request</b>
+          <p>Send the style #, quantities, sizes, and deadline. Tell us if you want blanks or printing.</p>
         </div>
         <div class="step">
-          <b><span class="badge">3</span> Proof approval</b>
-          <p>For decorated orders, you approve a digital proof before production.</p>
+          <b><span class="badge">3</span> Proof approval (for decorated orders)</b>
+          <p>We provide a digital proof — placement, sizing, and spelling confirmed.</p>
         </div>
         <div class="step">
           <b><span class="badge">4</span> Delivery</b>
-          <p>Pickup/delivery/shipping. Optional sorting available for easy distribution.</p>
+          <p>Pickup or delivery. Optional sorting/packaging available for easy distribution.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- VENDOR + FAQ (combined, less scroll) -->
-  <section id="vendor">
+  <section id="why-us">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
-          <h4>Vendor info</h4>
-          <p class="sub">PO-friendly quotes + invoices. W-9 available for vendor setup.</p>
+          <h4>Why Schools Choose Us</h4>
+          <p class="sub">Trusted by schools, PTOs, and athletic programs for reliable service and clean results.</p>
         </div>
-        <a class="btn primary" href="#contact">Request a vendor packet</a>
       </div>
 
       <div class="cards3">
         <div class="feature">
-          <div class="icon">⏱️</div>
-          <h5>Typical turnaround</h5>
-          <p>5–10 business days (varies by order)</p>
+          <div class="icon">⭐</div>
+          <h5>Reliable & On-Time</h5>
+          <p>We understand school deadlines. From spirit days to fundraisers, we deliver when you need it.</p>
         </div>
         <div class="feature">
-          <div class="icon">🧾</div>
-          <h5>PO-friendly</h5>
-          <p>Clear quotes + invoices that match school purchasing systems</p>
+          <div class="icon">🎨</div>
+          <h5>Clean, Professional Prints</h5>
+          <p>Sharp logos, accurate colors, and consistent quality on every order.</p>
         </div>
         <div class="feature">
-          <div class="icon">✅</div>
-          <h5>Proof before print</h5>
-          <p>Digital proof approval for decorated orders</p>
+          <div class="icon">📋</div>
+          <h5>PO-Friendly & Vendor Ready</h5>
+          <p>Clear quotes, W-9 documentation, and invoices that fit school purchasing systems.</p>
         </div>
-      </div>
-
-      <div class="card" style="margin-top:12px; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
-        <div>
-          <h3 style="margin:0 0 6px;">W-9 Download</h3>
-          <p class="muted" style="margin:0;">Use this for vendor onboarding when needed.</p>
+        <div class="feature">
+          <div class="icon">🤝</div>
+          <h5>Easy Communication</h5>
+          <p>Fast responses, real people, and clear updates — no runaround.</p>
         </div>
-        <a
-          href="https://www.schoolapparelsolutions.com/School_Apparel_Solutions_W9_2026.pdf"
-          target="_blank"
-          rel="noopener"
-          class="btn ghost"
-        >
-          📥 Download W-9 (PDF)
-        </a>
-      </div>
-
-      <div style="height:14px"></div>
-
-      <div class="sectionTitle" style="margin-bottom:10px;">
-        <div>
-          <h4>FAQ</h4>
-          <p class="sub">Quick answers schools usually ask.</p>
+        <div class="feature">
+          <div class="icon">🔍</div>
+          <h5>Proof Before Production</h5>
+          <p>Digital proofs are sent before printing so layouts and spelling are correct.</p>
         </div>
-      </div>
-
-      <div class="faqGrid">
-        <details class="faqItem">
-          <summary>
-            Can we do blanks only?
-            <span class="chev">⌄</span>
-          </summary>
-          <p>Yes — blanks only is fine. If you want printing later, we can quote both ways.</p>
-        </details>
-
-        <details class="faqItem">
-          <summary>
-            Do you ship outside MA/RI?
-            <span class="chev">⌄</span>
-          </summary>
-          <p>Yes — we can ship to schools nationwide. Delivery/pickup options depend on location.</p>
-        </details>
-
-        <details class="faqItem">
-          <summary>
-            What do you need for a quote?
-            <span class="chev">⌄</span>
-          </summary>
-          <p>Style # (if known), garment color, sizes/quantities, print locations, and deadline.</p>
-        </details>
-
-        <details class="faqItem">
-          <summary>
-            Do we get a proof?
-            <span class="chev">⌄</span>
-          </summary>
-          <p>For decorated orders, always. You approve the proof before production begins.</p>
-        </details>
+        <div class="feature">
+          <div class="icon">📦</div>
+          <h5>Organized Delivery</h5>
+          <p>Optional sorting by class, team, or size makes distribution easy.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <section id="vendors">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h4>Vendor info</h4>
+          <p class="sub">For school business offices and purchasing departments.</p>
+        </div>
+      </div>
+
+      <div class="cards3">
+        <div class="feature">
+          <div class="icon">📄</div>
+          <h5>W-9</h5>
+          <p>Download our completed W-9 form for vendor setup.</p>
+
+          <a
+            href="https://www.schoolapparelsolutions.com/School_Apparel_Solutions_W9_2026.pdf"
+            target="_blank"
+            rel="noopener"
+            class="btn ghost"
+            style="margin-top:10px; display:inline-flex;"
+          >
+            📥 Download W-9 (PDF)
+          </a>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🧾</div>
+          <h5>Invoices & Quotes</h5>
+          <p>Clear written quotes, PO-friendly invoices, and simple documentation.</p>
+        </div>
+
+        <div class="feature">
+          <div class="icon">🔒</div>
+          <h5>Professional handling</h5>
+          <p>Proof approval step + consistent production notes to ensure accuracy for school orders.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px;">
+        <h3>Want us set up as a vendor?</h3>
+        <p class="muted">Send the vendor packet request and we’ll respond with required documents (W-9, business certificate/DBA if needed, etc.).</p>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn primary" href="#contact">Request vendor packet</a>
+          <a class="btn ghost" href="#contact">Email purchasing info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="sectionTitle">
+        <div>
+          <h4>FAQ</h4>
+          <p class="sub">Quick answers schools usually ask before ordering.</p>
+        </div>
+      </div>
+
+      <div class="how">
+        <div class="step">
+          <b><span class="badge">Q</span> Can we do blanks only?</b>
+          <p>Yes — blanks only is fine. If you want printing later, we can quote both ways.</p>
+        </div>
+        <div class="step">
+          <b><span class="badge">Q</span> Do you ship outside MA/RI?</b>
+          <p>Yes — we can ship to schools nationwide. Delivery/pickup options depend on location.</p>
+        </div>
+        <div class="step">
+          <b><span class="badge">Q</span> What do you need for a quote?</b>
+          <p>Style # (if known), garment color, sizes/quantities, print locations, and deadline.</p>
+        </div>
+        <div class="step">
+          <b><span class="badge">Q</span> Do we get a proof?</b>
+          <p>For decorated orders, always. You approve the proof before production begins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
       <div class="sectionTitle">
         <div>
           <h4>Contact</h4>
-          <p class="sub">Fast quote turnaround. Schools: include your PO/contact process so we can match it.</p>
+          <p class="sub">Fast quote turnaround. If you’re a school, include your PO/contact process so we can match it.</p>
         </div>
       </div>
 
@@ -658,7 +795,7 @@
             <input class="input" name="_replyto" id="email" type="email" placeholder="Your email" required />
             <div style="height:10px"></div>
 
-            <textarea class="input" name="message" id="msg" placeholder="Style # (optional), items, quantities, sizes, colors, blanks vs printing, deadline, delivery/pickup." required></textarea>
+            <textarea class="input" name="message" id="msg" placeholder="Tell us what you need: style # (optional), items, quantities, sizes, colors, blanks vs printing, deadline, delivery/pickup." required></textarea>
 
             <input type="hidden" name="subject" value="Quote / Vendor Packet Request" />
 
@@ -668,7 +805,7 @@
             <div class="status" id="formStatus"></div>
 
             <p class="fineprint">
-              Tip: We’ll reply by email. If you have artwork, you can attach it when you reply.
+              Tip: We’ll reply by email. If you have artwork, you can attach it when you reply to our response.
             </p>
           </form>
         </div>
@@ -708,10 +845,24 @@
 
           <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
             <a class="btn ghost" href="#top">Back to top</a>
-            <a class="btn primary" href="#catalog">Browse catalog</a>
+            <a class="btn primary" href="#contact">Get started</a>
           </div>
         </div>
       </div>
+
+      <div class="stickyCta">
+        <div class="stickyCard">
+          <div>
+            <b>Need blanks or spiritwear?</b>
+            <span class="muted"> Browse the catalog, then request a quote.</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="muted" href="https://www.sportswearcollection.com/?site=SHRMUVLCJU" target="_blank" rel="noopener">Browse Supplier Catalog ↗</a>
+            <a class="btn primary" href="#contact">Request a quote</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -721,7 +872,7 @@
         <div>
           <b>School Apparel Solutions</b>
           <div class="muted" style="font-size:12px; margin-top:2px;">
-            © <span id="year"></span> • School spiritwear &amp; staff apparel • PO-friendly quotes
+            © <span id="year"></span> • School spiritwear & staff apparel • PO-friendly quotes
           </div>
         </div>
         <div class="muted" style="font-size:12px;">
@@ -734,7 +885,7 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Formspree submission: stay on-page + show a message
+    // Make Formspree submission stay on-page + show a success message
     const form = document.getElementById("quoteForm");
     const statusEl = document.getElementById("formStatus");
     const btn = document.getElementById("sendBtn");
